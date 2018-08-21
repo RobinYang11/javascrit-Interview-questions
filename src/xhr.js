@@ -1,0 +1,2 @@
+
+var xhr=XMLHttpRequest();
