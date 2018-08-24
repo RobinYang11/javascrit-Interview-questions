@@ -43,3 +43,27 @@ function ajax(options) {
     console.log(res)
     })
 ```
+
+## 2.原生js实现事件代理
+```
+function delegate(e, srcSelector, targetSelector, fn) {
+    var src = document.querySelectorAll(srcSelector);
+    var target = document.querySelectorAll(targetSelector)[0];
+    target.addEventListener(e, function(event) {
+        var isDelegated = false;
+        for(var i = 0; i < src.length; i++) {
+            if(src[i] == event.target) {
+                isDelegated = true;
+            }
+            if(isDelegated) {
+                fn();
+                return;
+            }
+        }
+    })
+}
+
+delegate("click", "ul>li", "#list", function() {
+    console.log("robin")
+})
+```
