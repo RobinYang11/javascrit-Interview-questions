@@ -45,6 +45,8 @@ function ajax(options) {
 ```
 
 ## 2.原生js实现事件代理
+
+
 ```
 function delegate(e, srcSelector, targetSelector, fn) {
     var src = document.querySelectorAll(srcSelector);
